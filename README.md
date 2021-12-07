@@ -15,7 +15,7 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | capslock + E | up |
 | capslock + ; | cmd + right(move to the end of line) |
 | capslock + O | alt + up |
-| capslock + ; | alt + down |
+| capslock + L | alt + down |
 | capslock + delete | esc |
 | capslock + return | move to a new line |
 | capslock + , | select current word and copy it |

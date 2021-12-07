@@ -2,7 +2,7 @@
 
 My personal hotkey configuration, maked by Hammerspoon and Karabiner.
 
-This is a substitute for capslox(becasue capslox is nolonger free)
+This is a substitute for capslox(becasue capslox is nolonger free).
 
 ## enable hotkey
 
@@ -20,3 +20,6 @@ This is a substitute for capslox(becasue capslox is nolonger free)
 | capslock + return | move to a new line |
 | capslock + , | select current word and copy it |
 
+## usage
+1. use Karabiner bind capslock to F17
+2. copy init.lua or something in it to your own init.lua

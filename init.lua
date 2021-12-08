@@ -71,9 +71,26 @@ end)
 
 -- [hyper + , => select current word and copy it]
 hyper:bind({}, ',', function ()
-  send({'alt'}, 'right')
-  send({'alt', 'shift'}, 'left')
-  send({'cmd'}, 'c')
+  local ele = hs.axuielement.systemWideElement()
+  if ele then
+    local currentElement = ele:attributeValue('AXFocusedUIElement')
+    local role = currentElement:attributeValue("AXRole")
+    if role == "AXTextField" or role == "AXTextArea" or role == "AXComboBox" then
+      local value = currentElement:attributeValue('AXValue')
+      local lastLetter = value:sub(-1)
+
+      -- auto select current word
+      if lastLetter == ' ' or lastLetter == "'" or lastLetter == ':' or lastLetter == '.' then
+        send({'alt'}, 'right')
+        send({'alt', 'shift'}, 'left')
+        send({'cmd'}, 'c')
+      else 
+        send({'alt'}, 'left')
+        send({'alt', 'shift'}, 'right')
+        send({'cmd'}, 'c')
+      end
+    end
+  end
   hyper.triggered = true
 end)
 

@@ -9,13 +9,16 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | hotkey | function |
 | --- | --- |
 | capslock | toggle input method between ABC and Chinese |
+| hold capslock | do nothing |
 | capslock + S | left |
 | capslock + D | down |
 | capslock + F | right |
 | capslock + E | up |
+| capslock + I | alt + up |
+| capslock + K | alt + down |
+| capslock + J | alt + left |
+| capslock + L | alt + right |
 | capslock + ; | cmd + right(move to the end of line) |
-| capslock + O | alt + up |
-| capslock + L | alt + down |
 | capslock + delete | esc |
 | capslock + return | move to a new line |
 | capslock + , | select current word and copy it |

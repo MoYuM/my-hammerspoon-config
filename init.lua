@@ -4,22 +4,26 @@ toggle_input = true
 
 function enterHyperMode()
   hyper.triggered = false
+  enterTime = hs.timer.absoluteTime()
   hyper:enter()
 end
 
 function exitHyperMode()
+  exitTime = hs.timer.absoluteTime()
+  openTime = (exitTime - enterTime) / 1000000
   hyper:exit()
-  if not hyper.triggered then
+  if not hyper.triggered and openTime < 500 then
     toggleInputMethod()
   end
 end
+
+hs.hotkey.bind({}, 'F17', enterHyperMode, exitHyperMode)
 
 -- send a keyStroke with no delay
 function send(mods, key)
   hs.eventtap.keyStroke(mods, key, 0)
 end
 
-hs.hotkey.bind({}, 'F17', enterHyperMode, exitHyperMode)
 
 -- [hyper + S => left]
 hyper:bind({}, 'S', function()
@@ -73,15 +77,27 @@ hyper:bind({}, ',', function ()
   hyper.triggered = true
 end)
 
--- [hyper + Oc => alt + up]
-hyper:bind({}, 'O', function ()
+-- [hyper + I => alt + up]
+hyper:bind({}, 'I', function ()
   send({'alt'}, 'up')
   hyper.triggered = true
 end)
 
--- [hyper + L => alt + down]
-hyper:bind({}, 'L', function ()
+-- [hyper + K => alt + down]
+hyper:bind({}, 'K', function ()
   send({'alt'}, 'down')
+  hyper.triggered = true
+end)
+
+-- [hyper + J => alt + left]
+hyper:bind({}, 'J', function ()
+  send({'alt'}, 'left')
+  hyper.triggered = true
+end)
+
+-- [hyper + L => alt + right]
+hyper:bind({}, 'L', function ()
+  send({'alt'}, 'right')
   hyper.triggered = true
 end)
 

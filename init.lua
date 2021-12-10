@@ -30,10 +30,16 @@ end
 hyper:bind({}, 'S', function()
 	send({}, 'left')
 	hyper.triggered = true
+end, nil, function ()
+	send({}, 'left')
+	hyper.triggered = true
 end)
 
 -- [hyper + D => down]
 hyper:bind({}, 'D', function()
+	send({}, 'down')
+	hyper.triggered = true
+end, nil, function ()
 	send({}, 'down')
 	hyper.triggered = true
 end)
@@ -42,10 +48,16 @@ end)
 hyper:bind({}, 'F', function()
 	send({}, 'right')
 	hyper.triggered = true
+end, nil, function ()
+	send({}, 'right')
+	hyper.triggered = true
 end)
 
 -- [hyper + E => up]
 hyper:bind({}, 'E', function()
+	send({}, 'up')
+	hyper.triggered = true
+end, nil, function ()
 	send({}, 'up')
 	hyper.triggered = true
 end)

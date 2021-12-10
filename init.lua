@@ -139,3 +139,10 @@ hyper:bind({}, 'L', function()
 	send({'alt'}, 'right')
 	hyper.triggered = true
 end)
+
+
+-- [hyper + [  => cmd + G]
+hyper:bind({}, ']', function ()
+	send({'cmd'}, 'G')
+	hyper.triggered = true
+end)

@@ -82,40 +82,6 @@ hyper:bind({}, 'return', function()
 	send({}, 'return')
 end)
 
--- [hyper + , => select current word and copy it]
-hyper:bind({}, ',', function()
-	local ele = hs.axuielement.systemWideElement()
-	if ele then
-		
-			local currentElement = ele:attributeValue('AXFocusedUIElement')
-			-- can not get element in vscode, I dont know why
-			if not currentElement then 
-				send({'alt'}, 'right')
-				send({'alt', 'shift'}, 'left')
-				send({'cmd'}, 'c')
-				return nil
-			end
-
-			local role = currentElement:attributeValue("AXRole")
-			if role == "AXTextField" or role == "AXTextArea" or role == "AXComboBox" then
-					local value = currentElement:attributeValue('AXValue')
-					local lastLetter = value:sub(-1)
-
-					-- auto select current word
-					if lastLetter == ' ' or lastLetter == "'" or lastLetter == ':' or lastLetter == '.' or lastLetter == '?' then
-							send({'alt'}, 'right')
-							send({'alt', 'shift'}, 'left')
-							send({'cmd'}, 'c')
-					else
-							send({'alt'}, 'left')
-							send({'alt', 'shift'}, 'right')
-							send({'cmd'}, 'c')
-					end
-			end
-	end
-	hyper.triggered = true
-end)
-
 -- [hyper + I => alt + up]
 hyper:bind({}, 'I', function()
 	send({'alt'}, 'up')
@@ -145,4 +111,41 @@ end)
 hyper:bind({}, ']', function ()
 	send({'cmd'}, 'G')
 	hyper.triggered = true
+end)
+
+-- [hyper + ]  => shift + cmd + G]
+hyper:bind({}, '[', function ()
+	send({'cmd', 'shift'}, 'G')
+	hyper.triggered = true
+end)
+
+-- [hyper + cmd + J => shift + alt + J]
+hyper:bind({'cmd'}, 'J', function ()
+	send({'shift', 'alt'}, 'left')
+	hyper.trigger = true
+end)
+
+-- [hyper + cmd + L => shift + alt + L]
+hyper:bind({'cmd'}, 'L', function ()
+	send({'shift', 'alt'}, 'right')
+	hyper.trigger = true
+end)
+
+-- [hyper + T => show time]
+hyper:bind({}, 'T', function ()
+	local localTime = hs.timer.localTime()
+	local hour = math.floor(localTime / 3600)
+	local min = math.floor(localTime % 3600 / 60)
+	if (min < 10) then
+		min = '0' .. min
+	end
+	hs.alert.show('' .. hour .. ':' .. min)
+	hyper.trigger = true
+end)
+
+-- [hyper + - => cmd + K + cmd + Q]
+hyper:bind({}, '-', function ()
+	send({'cmd'}, 'K')
+	send({'cmd'}, 'Q')
+	hyper.trigger = true
 end)

@@ -19,7 +19,7 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | capslock + J       | alt + left                                  |
 | capslock + L       | alt + right                                 |
 | capslock + ;       | cmd + right(move to the end of line)        |
-| capslock + delete  | esc                                         |
+| capslock + \       | esc                                         |
 | capslock + return  | move to a new line                          |
 | capslock + ]       | cmd + G                                     |
 | capslock + [       | cmd + shift + G                             |
@@ -27,6 +27,7 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | capslock + cmd + L | shift + alt + right                         |
 | capslock + T       | show time                                   |
 | capslock + -       | cmd + K, cmd + Q                            |
+| capslock + M       | delete a word before cursor                 |
 
 ## usage
 

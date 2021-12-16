@@ -68,8 +68,8 @@ hyper:bind({}, ';', function()
 	hyper.triggered = true
 end)
 
--- [hyper + delete => escape]
-hyper:bind({}, 'delete', function()
+-- [hyper + \ => escape]
+hyper:bind({}, '\\', function()
 	send({}, 'escape')
 	hyper.triggered = true
 end)
@@ -147,5 +147,12 @@ end)
 hyper:bind({}, '-', function ()
 	send({'cmd'}, 'K')
 	send({'cmd'}, 'Q')
+	hyper.trigger = true
+end)
+
+-- [hyper + M => delete word before cusor]
+hyper:bind({}, 'M', function ()
+	send({'shift', 'alt'}, 'left')
+	send({}, 'delete')
 	hyper.trigger = true
 end)

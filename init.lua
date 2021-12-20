@@ -119,15 +119,10 @@ hyper:bind({}, '[', function ()
 	hyper.triggered = true
 end)
 
--- [hyper + cmd + J => shift + alt + J]
-hyper:bind({'cmd'}, 'J', function ()
+-- [hyper + cmd + L => 向左选中一个单词并复制它]
+hyper:bind({}, 'O', function ()
 	send({'shift', 'alt'}, 'left')
-	hyper.trigger = true
-end)
-
--- [hyper + cmd + L => shift + alt + L]
-hyper:bind({'cmd'}, 'L', function ()
-	send({'shift', 'alt'}, 'right')
+	send({'cmd'}, 'C')
 	hyper.trigger = true
 end)
 

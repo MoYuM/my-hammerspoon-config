@@ -21,12 +21,13 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | capslock + ;      | cmd + right(move to the end of line)                       |
 | capslock + \      | esc                                                        |
 | capslock + return | move to a new line                                         |
-| capslock + ]      | cmd + G                                                    |
-| capslock + [      | cmd + shift + G                                            |
+| capslock + ]      | shift + ctrl + - (goforward in vscode)                     |
+| capslock + [      | ctrl + - (goback in vscode)                                |
 | capslock + T      | show time                                                  |
-| capslock + -      | cmd + K, cmd + Q                                           |
 | capslock + M      | delete a word before cursor                                |
 | capslock + O      | select the word on the left side of the cursor and copy it |
+| capslock + -      | cmd + shift + G (foregone match)                           |
+| capslock + =      | cmd + G (next match in vscode)                             |
 
 ## usage
 

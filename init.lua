@@ -107,14 +107,14 @@ hyper:bind({}, 'L', function()
 end)
 
 
--- [hyper + [  => cmd + G]
-hyper:bind({}, ']', function ()
+-- [hyper + =  => cmd + G]
+hyper:bind({}, '=', function ()
 	send({'cmd'}, 'G')
 	hyper.triggered = true
 end)
 
--- [hyper + ]  => shift + cmd + G]
-hyper:bind({}, '[', function ()
+-- [hyper + -  => shift + cmd + G]
+hyper:bind({}, '-', function ()
 	send({'cmd', 'shift'}, 'G')
 	hyper.triggered = true
 end)
@@ -138,10 +138,15 @@ hyper:bind({}, 'T', function ()
 	hyper.trigger = true
 end)
 
--- [hyper + - => cmd + K + cmd + Q]
-hyper:bind({}, '-', function ()
-	send({'cmd'}, 'K')
-	send({'cmd'}, 'Q')
+-- [hyper + [ => cmd + K + cmd + Q]
+hyper:bind({}, '[', function ()
+	send({'ctrl'}, '-')
+	hyper.trigger = true
+end)
+
+-- [hyper + ] => shift + ctrl + =]
+hyper:bind({}, ']', function ()
+	send({'ctrl', 'shift'}, '-')
 	hyper.trigger = true
 end)
 

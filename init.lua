@@ -68,12 +68,6 @@ hyper:bind({}, ';', function()
 	hyper.triggered = true
 end)
 
--- [hyper + \ => escape]
-hyper:bind({}, '\\', function()
-	send({}, 'escape')
-	hyper.triggered = true
-end)
-
 -- [hyper + return => move to end of line + return] (will exit hyper)
 hyper:bind({}, 'return', function()
 	send({'cmd'}, 'right')
@@ -94,18 +88,29 @@ hyper:bind({}, 'K', function()
 	hyper.triggered = true
 end)
 
--- [hyper + J => alt + left]
-hyper:bind({}, 'J', function()
-	send({'alt'}, 'left')
-	hyper.triggered = true
-end)
-
--- [hyper + L => alt + right]
+-- [hyper + L => shift + ctrl + ,]
 hyper:bind({}, 'L', function()
-	send({'alt'}, 'right')
+	send({'shift', 'ctrl'}, ',')
 	hyper.triggered = true
 end)
 
+-- [hyper + J => cmd + left]
+hyper:bind({}, 'J', function()
+	send({'cmd'}, 'left')
+	hyper.triggered = true
+end)
+
+-- [hyper + O => shift + ctrl + .]
+hyper:bind({}, 'O', function()
+	send({'shift', 'ctrl'}, '/')
+	hyper.triggered = true
+end)
+
+-- [hyper + P => shift + ctrl + .]
+hyper:bind({}, 'P', function()
+send({'shift', 'ctrl'}, '.')
+	hyper.triggered = true
+end)
 
 -- [hyper + =  => cmd + G]
 hyper:bind({}, '=', function ()
@@ -119,24 +124,17 @@ hyper:bind({}, '-', function ()
 	hyper.triggered = true
 end)
 
--- [hyper + cmd + L => 向左选中一个单词并复制它]
-hyper:bind({}, 'O', function ()
-	send({'shift', 'alt'}, 'left')
-	send({'cmd'}, 'C')
-	hyper.trigger = true
-end)
-
--- [hyper + T => show time]
-hyper:bind({}, 'T', function ()
-	local localTime = hs.timer.localTime()
-	local hour = math.floor(localTime / 3600)
-	local min = math.floor(localTime % 3600 / 60)
-	if (min < 10) then
-		min = '0' .. min
-	end
-	hs.alert.show('' .. hour .. ':' .. min)
-	hyper.trigger = true
-end)
+-- -- [hyper + T => show time]
+-- hyper:bind({}, 'T', function ()
+-- 	local localTime = hs.timer.localTime()
+-- 	local hour = math.floor(localTime / 3600)
+-- 	local min = math.floor(localTime % 3600 / 60)
+-- 	if (min < 10) then
+-- 		min = '0' .. min
+-- 	end
+-- 	hs.alert.show('' .. hour .. ':' .. min)
+-- 	hyper.trigger = true
+-- end)
 
 -- [hyper + [ => cmd + K + cmd + Q]
 hyper:bind({}, '[', function ()
@@ -147,12 +145,5 @@ end)
 -- [hyper + ] => shift + ctrl + =]
 hyper:bind({}, ']', function ()
 	send({'ctrl', 'shift'}, '-')
-	hyper.trigger = true
-end)
-
--- [hyper + M => delete word before cusor]
-hyper:bind({}, 'M', function ()
-	send({'shift', 'alt'}, 'left')
-	send({}, 'delete')
 	hyper.trigger = true
 end)

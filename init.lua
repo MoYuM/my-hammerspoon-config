@@ -124,18 +124,6 @@ hyper:bind({}, '-', function ()
 	hyper.triggered = true
 end)
 
--- -- [hyper + T => show time]
--- hyper:bind({}, 'T', function ()
--- 	local localTime = hs.timer.localTime()
--- 	local hour = math.floor(localTime / 3600)
--- 	local min = math.floor(localTime % 3600 / 60)
--- 	if (min < 10) then
--- 		min = '0' .. min
--- 	end
--- 	hs.alert.show('' .. hour .. ':' .. min)
--- 	hyper.trigger = true
--- end)
-
 -- [hyper + [ => cmd + K + cmd + Q]
 hyper:bind({}, '[', function ()
 	send({'ctrl'}, '-')
@@ -145,5 +133,11 @@ end)
 -- [hyper + ] => shift + ctrl + =]
 hyper:bind({}, ']', function ()
 	send({'ctrl', 'shift'}, '-')
+	hyper.trigger = true
+end)
+
+-- [hyper + 9 => shift + cmd + 9]
+hyper:bind({}, '9', function ()
+	send({'shift', 'cmd'}, '8')
 	hyper.trigger = true
 end)

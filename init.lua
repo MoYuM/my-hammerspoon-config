@@ -141,3 +141,9 @@ hyper:bind({}, '9', function ()
 	send({'shift', 'cmd'}, '8')
 	hyper.trigger = true
 end)
+
+-- [hyper + 0 => shift + cmd + 0]
+hyper:bind({}, '\\', function ()
+	send({'shift', 'cmd'}, '0')
+	hyper.trigger = true
+end)

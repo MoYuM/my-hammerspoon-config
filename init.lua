@@ -100,15 +100,15 @@ hyper:bind({}, 'J', function()
 	hyper.triggered = true
 end)
 
--- [hyper + O => shift + ctrl + .]
+-- [hyper + O => alt + left]
 hyper:bind({}, 'O', function()
-	send({'shift', 'ctrl'}, '/')
+	send({'alt'}, 'left')
 	hyper.triggered = true
 end)
 
--- [hyper + P => shift + ctrl + .]
+-- [hyper + P => alt + right]
 hyper:bind({}, 'P', function()
-send({'shift', 'ctrl'}, '.')
+send({'alt'}, 'right')
 	hyper.triggered = true
 end)
 

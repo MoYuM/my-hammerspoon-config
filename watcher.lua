@@ -1,13 +1,17 @@
 local im = require('im')
 
-
 local function toggleIM(appName)
+	print(appName)
 	if (appName == 'Code') then
 		im.english()
 	elseif (appName == '阿里钉') then
 		im.chinese()
 	elseif (appName == '阿里语雀') then
 		im.chinese()
+	elseif (appName == '微信') then
+		im.chinese()
+	elseif (appName == 'Warp') then
+		im.english()
 	end
 end
 

@@ -10,12 +10,12 @@ local function toggleInputMethod()
 			hs.keycodes.currentSourceID("com.apple.keylayout.ABC")
 			hs.alert.show('Eng')
 	end
-	if toggle_input then
+	if toggle_input == 'en' then
 			Chinese()
-			toggle_input = false
+			toggle_input = 'ch'
 	else
 			English()
-			toggle_input = true
+			toggle_input = 'en'
 	end
 end
 

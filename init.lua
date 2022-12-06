@@ -2,7 +2,18 @@ local toggleInputMethod = dofile('./toggleInputMethod.lua')
 
 hyper = hs.hotkey.modal.new({}, 'F18')
 hs.window.animationDuration = 0
-toggle_input = true
+toggle_input = 'ch'
+
+function applicationWatcher(appName, eventType, appObject)
+	print(appName)
+	if (eventType == hs.application.watcher.activated) then
+			if (appName == "Code") then
+				hs.keycodes.currentSourceID("com.apple.keylayout.ABC")
+			end
+	end
+end
+appWatcher = hs.application.watcher.new(applicationWatcher)
+appWatcher:start()
 
 function enterHyperMode()
 	hyper.triggered = false

@@ -13,6 +13,7 @@ end
 function im.chinese()
 	-- 简体拼音
 	hs.keycodes.currentSourceID("com.apple.inputmethod.SCIM.ITABC")
+	hs.alert.closeAll()
 	hs.alert.show('拼')
 	im.toggle_input = 'ch'
 end
@@ -20,6 +21,7 @@ end
 function im.english()
 	-- ABC
 	hs.keycodes.currentSourceID("com.apple.keylayout.ABC")
+	hs.alert.closeAll()
 	hs.alert.show('ABC')
 	im.toggle_input = 'en'
 end

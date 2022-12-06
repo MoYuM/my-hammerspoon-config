@@ -1,4 +1,4 @@
-local appWatcher = require('appWatcher')
+local appWatcher = require('watcher')
 local im = require('im')
 
 hyper = hs.hotkey.modal.new({}, 'F18')

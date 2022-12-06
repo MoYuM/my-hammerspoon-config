@@ -1,10 +1,12 @@
 local appWatcher = require('appWatcher')
+local spacesWatcher = require('spacesWatcher')
 local im = require('im')
 
 hyper = hs.hotkey.modal.new({}, 'F18')
 hs.window.animationDuration = 0
 
 appWatcher:start()
+spacesWatcher:start()
 
 function enterHyperMode()
 	hyper.triggered = false

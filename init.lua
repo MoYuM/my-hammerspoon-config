@@ -1,15 +1,20 @@
-local toggleInputMethod = dofile('./toggleInputMethod.lua')
+local im = require('im')
 
 hyper = hs.hotkey.modal.new({}, 'F18')
 hs.window.animationDuration = 0
-toggle_input = 'ch'
 
 function applicationWatcher(appName, eventType, appObject)
 	print(appName)
 	if (eventType == hs.application.watcher.activated) then
-			if (appName == "Code") then
-				hs.keycodes.currentSourceID("com.apple.keylayout.ABC")
-			end
+		if (appName == 'Code') then
+			im.english()
+		end
+		if (appName == '阿里钉') then
+			im.chinese()
+		end
+		if (appName == '阿里语雀') then
+			im.chinese()
+		end
 	end
 end
 appWatcher = hs.application.watcher.new(applicationWatcher)
@@ -26,7 +31,7 @@ function exitHyperMode()
 	openTime = (exitTime - enterTime) / 1000000
 	hyper:exit()
 	if not hyper.triggered and openTime < 500 then
-		toggleInputMethod()
+		im.toggle()
 	end
 end
 

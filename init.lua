@@ -1,4 +1,5 @@
 local appWatcher = require('appWatcher')
+local im = require('im')
 
 hyper = hs.hotkey.modal.new({}, 'F18')
 hs.window.animationDuration = 0
@@ -134,17 +135,5 @@ end)
 -- [hyper + ] => shift + ctrl + =]
 hyper:bind({}, ']', function ()
 	send({'ctrl', 'shift'}, '-')
-	hyper.trigger = true
-end)
-
--- [hyper + 9 => shift + cmd + 9]
-hyper:bind({}, '9', function ()
-	send({'shift', 'cmd'}, '8')
-	hyper.trigger = true
-end)
-
--- [hyper + 0 => shift + cmd + 0]
-hyper:bind({}, '\\', function ()
-	send({'shift', 'cmd'}, '0')
 	hyper.trigger = true
 end)

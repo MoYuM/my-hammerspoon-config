@@ -2,9 +2,9 @@ local color = require('color')
 
 
 local style = {
-	strokeWidth = 10,
+	strokeWidth = 0,
 	fillColor = color.white,
-	strokeColor = color.orange,
+	strokeColor = color.white,
 	textColor = color.orange,
 	radius = 16,
 	atScreenEdge = 2,

@@ -8,6 +8,8 @@ local style = {
 	textColor = color.orange,
 	radius = 16,
 	atScreenEdge = 2,
+	textSize = 36,
+	padding = 10,
 }
 
 im = {}

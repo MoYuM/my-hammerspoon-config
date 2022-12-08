@@ -17,7 +17,6 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | capslock + I      | alt + up                                                   |
 | capslock + K      | alt + down                                                 |
 | capslock + J      | alt + left                                                 |
-| capslock + L      | alt + right                                                |
 | capslock + ;      | cmd + right(move to the end of line)                       |
 | capslock + \      | esc                                                        |
 | capslock + return | move to a new line                                         |
@@ -26,8 +25,6 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | capslock + T      | show time                                                  |
 | capslock + M      | delete a word before cursor                                |
 | capslock + O      | select the word on the left side of the cursor and copy it |
-| capslock + -      | cmd + shift + G (foregone match)                           |
-| capslock + =      | cmd + G (next match in vscode)                             |
 
 ## usage
 

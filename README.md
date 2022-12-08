@@ -4,7 +4,26 @@ My personal hotkey configuration, maked by Hammerspoon and Karabiner.
 
 This is a substitute for capslox(becasue capslox is nolonger free).
 
-## enable hotkey
+## Usage
+
+1. use Karabiner bind capslock to F17
+2. copy all file to `~/.hammerspoon`
+
+## Hotkey
+
+config already have a set of keys remap, and you can add new key remap in `keys.lua`.
+
+```lua
+  {
+    -- remap alt + right to capslock + P
+    from = { { 'alt' }, 'right' },
+    to = 'P',
+    -- can hold the key to repeat
+    canRepeat = true,
+  }
+```
+
+the remap hotkeys that I already set:
 
 | hotkey            | function                                                   |
 | ----------------- | ---------------------------------------------------------- |
@@ -26,7 +45,6 @@ This is a substitute for capslox(becasue capslox is nolonger free).
 | capslock + M      | delete a word before cursor                                |
 | capslock + O      | select the word on the left side of the cursor and copy it |
 
-## usage
+## Auto Switch Imput Method
 
-1. use Karabiner bind capslock to F17
-2. copy init.lua or something in it to your own init.lua
+You can auto switch input method when you focus application or change space, customiza the config in `watcher.lua`. 

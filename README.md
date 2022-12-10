@@ -53,4 +53,4 @@ You can auto switch input method when you focus application or change space, cus
 
 I use [Caffeine Spoon](https://github.com/Hammerspoon/Spoons/raw/master/Spoons/Caffeine.spoon.zip) to prevent system sleep.
 
-Click the caffe icon on menubar to switch it.
+Click the caffe icon in menubar to switch it.

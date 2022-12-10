@@ -48,3 +48,9 @@ the remap hotkeys that I already set:
 ## Auto Switch Imput Method
 
 You can auto switch input method when you focus application or change space, customiza the config in `watcher.lua`. 
+
+## Caffeine
+
+I use [Caffeine Spoon](https://github.com/Hammerspoon/Spoons/raw/master/Spoons/Caffeine.spoon.zip) to prevent system sleep.
+
+Click the caffe icon on menubar to switch it.

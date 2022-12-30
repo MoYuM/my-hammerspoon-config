@@ -12,6 +12,8 @@ local function toggleIM(appName)
 		im.chinese()
 	elseif (appName == 'Warp') then
 		im.english()
+	elseif (appName == 'iTerm2') then
+		im.english()
 	end
 end
 

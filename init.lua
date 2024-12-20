@@ -1,9 +1,10 @@
-require('keys')
+hs.loadSpoon("InputSourceSwitch")
 
-hs.window.animationDuration = 0
+spoon.InputSourceSwitch:setApplications({
+    ["微信"] = "Pinyin - Simplified",
+    ["飞书"] = "Pinyin - Simplified",
+    ["iTerm2"] = "ABC",
+    ["Code"] = "ABC"
+})
 
-local appWatcher = require('watcher')
-appWatcher:start()
-
-local caffeine = require('Caffeine')
-caffeine:start()
+spoon.InputSourceSwitch:start()
